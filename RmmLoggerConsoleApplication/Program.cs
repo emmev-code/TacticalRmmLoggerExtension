@@ -44,6 +44,19 @@ namespace RmmLoggerConsoleApplication
                     }
                     break;
                 }
+                else if (arg == "--flushlogs")
+                {
+                    try
+                    {
+                        File.Delete(_logFilePath);
+                        Console.WriteLine("Log file flushed successfully!");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                    break;
+                }
             }
             Console.WriteLine();
         }
